@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentkit-playbook"
+version = "0.1.0"
+description = "生产级 Agent 工程实践：工具层 / 记忆层 / 守护层 / 可观测性 / 工作流 / 数据层（面试题驱动的完整可运行项目）"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.5"]
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=1.0"]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["agentkit*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

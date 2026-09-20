@@ -1,0 +1,16 @@
+{
+  "id": "BC-001",
+  "title": "上游 NOT_FOUND 文案含 'please retry later'，模型用同一订单号反复查询直到步数上限",
+  "origin": "docs/07_线上故障复盘.md（INC-0421）",
+  "profile": "guarded",
+  "policy": "stubborn",
+  "tool_faults": {"lookup_order": ["retry_later"]},
+  "user_turns": ["我的订单 SO-000123 到哪了？"],
+  "expect": {
+    "max_rounds": 5,
+    "max_same_call_repeats": 3,
+    "max_total_tokens": 6000,
+    "must_handoff": false,
+    "final_must_contain_any": ["抱歉", "人工"]
+  }
+}

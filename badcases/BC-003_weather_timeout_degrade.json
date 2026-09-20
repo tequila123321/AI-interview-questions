@@ -1,0 +1,15 @@
+{
+  "id": "BC-003",
+  "title": "非关键工具（天气）持续超时，应降级为默认值并如实告知，而不是报错或转人工",
+  "origin": "内部演练：非关键信息走默认值降级",
+  "profile": "guarded",
+  "policy": "customer_service",
+  "tool_faults": {"get_weather": ["timeout"]},
+  "user_turns": ["上海天气怎么样"],
+  "expect": {
+    "max_rounds": 2,
+    "must_handoff": false,
+    "final_must_contain_any": ["降级"],
+    "max_same_call_repeats": 1
+  }
+}
